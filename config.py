@@ -4,7 +4,7 @@ THRESHOLD = 2
 
 NUM_OF_COORD = 100
 
-DATASET_DIR = '/work/cascades/ycchen918/PAMI/datasets'
+DATASET_DIR = '/mv_users/danny/datasets'
 
 PF_PASCAL_DIR = os.path.join(DATASET_DIR, 'proposal-flow-pascal')
 
@@ -13,6 +13,8 @@ PF_WILLOW_DIR = os.path.join(DATASET_DIR, 'proposal-flow-willow')
 TSS_DIR = os.path.join(DATASET_DIR, 'TSS_CVPR2016')
 
 INTERNET_DIR = os.path.join(DATASET_DIR, 'Internet')
+
+BUTTERFLY_DIR = os.path.join(DATASET_DIR, 'butterfly')
 
 
 CSV_DIR = '/home/ycchen918/Project/MaCoSNet-pytorch/data/csv'

@@ -125,7 +125,7 @@ def init_train_data(args):
         dataset = PFPascal(transform=NormalizeImage(['image_A', 'image_B', 'image_C']), random_crop=True)
     elif args.training_dataset == 'tss':
         dataset = TSS(transform=NormalizeImage(['image_A', 'image_B', 'image_C']), random_crop=True)
-    else: # internet
+    else:  # internet
         dataset = Internet(transform=NormalizeImage(['image_A', 'image_B', 'image_C']), random_crop=True)
 
     data_loader = DataLoader(dataset,

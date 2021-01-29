@@ -18,6 +18,7 @@ class TSS(Dataset):
                  csv_file=config.TSS_TRAIN_DATA, 
                  dataset_path=config.TSS_DIR,
                  output_size=(240,240),
+                 
                  transform=None,
                  random_crop=False):
 
