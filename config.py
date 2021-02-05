@@ -17,7 +17,7 @@ INTERNET_DIR = os.path.join(DATASET_DIR, 'Internet')
 BUTTERFLY_DIR = os.path.join(DATASET_DIR, 'butterfly')
 
 
-CSV_DIR = '/home/ycchen918/Project/MaCoSNet-pytorch/data/csv'
+CSV_DIR = '/mv_users/danny/repos/MaCoSNet-pytorch/data/csv'
 
 PF_PASCAL_TRAIN_DATA = os.path.join(CSV_DIR, 'pf-pascal', 'train.csv')
 PF_PASCAL_EVAL_DATA = os.path.join(CSV_DIR, 'pf-pascal', 'eval.csv')

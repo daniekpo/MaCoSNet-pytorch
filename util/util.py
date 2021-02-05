@@ -1,3 +1,4 @@
+from data.butterfly import Butterfly, ButterflyEval
 import os
 import shutil
 import numpy as np
@@ -19,8 +20,8 @@ from data.pf_pascal import PFPascalVal
 from data.pf_willow import PFWillow
 from data.tss import TSS
 from data.tss import TSSVal
-from data.internet import Internet
-from data.internet import InternetVal
+# from data.internet import Internet
+# from data.internet import InternetVal
 
 try:
     from dataloader import DataLoader
@@ -125,6 +126,8 @@ def init_train_data(args):
         dataset = PFPascal(transform=NormalizeImage(['image_A', 'image_B', 'image_C']), random_crop=True)
     elif args.training_dataset == 'tss':
         dataset = TSS(transform=NormalizeImage(['image_A', 'image_B', 'image_C']), random_crop=True)
+    elif args.training_dataset == 'butterfly':
+        dataset = Butterfly()
     else:  # internet
         dataset = Internet(transform=NormalizeImage(['image_A', 'image_B', 'image_C']), random_crop=True)
 
@@ -141,10 +144,13 @@ def init_eval_data(args):
 
     if args.training_dataset == 'pf-pascal':
         dataset = PFPascalVal(transform=NormalizeImage(['image_A', 'image_B']), mode='eval')
-    if args.training_dataset == 'tss':
+    elif args.training_dataset == 'tss':
         dataset = TSSVal(transform=NormalizeImage(['image_A', 'image_B']))
-    else: # Internet
-        dataset = InternetVal(transform=NormalizeImage(['image_A', 'image_B']))
+    elif args.training_dataset == 'butterfly':
+        dataset = ButterflyEval()
+    else:
+        print('No valid dataset provided - cannot load eval dataset. Exiting...')
+        exit()
 
     data_loader = DataLoader(dataset,
                              batch_size=args.batch_size,

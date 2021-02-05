@@ -39,7 +39,7 @@ class PFWillow(Dataset):
 
         self.out_h, self.out_w = output_size
         self.pairs = pd.read_csv(csv_file)
-        self.category = self.pairs.iloc[:,2].as_matrix().astype('int')
+        self.category = self.pairs.iloc[:,2].to_numpy().astype('int')
         if category is not None:
             cat_idx = np.nonzero(self.category==category)[0]
             self.category=self.category[cat_idx]

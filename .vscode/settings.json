@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/home/danny/anaconda3/envs/macosnet/bin/python",
+    "python.pythonPath": "/home/danny/miniconda3/envs/macosnet/bin/python",
     "python.linting.flake8Enabled": true,
     "python.linting.enabled": true
 }
