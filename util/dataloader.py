@@ -100,7 +100,12 @@ def default_collate(batch):
             numel = sum([x.numel() for x in batch])
             storage = batch[0].storage()._new_shared(numel)
             out = batch[0].new(storage)
-        return torch.stack(batch, 0, out=out)
+        try:
+            result = torch.stack(batch, 0, out=out)
+            return result
+        except Exception as error:
+            return error
+
     elif type(batch[0]).__module__ == 'numpy':
         elem = batch[0]
         if type(elem).__name__ == 'ndarray':

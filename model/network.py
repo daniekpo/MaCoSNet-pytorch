@@ -248,8 +248,8 @@ class WeakMatchNet(CNNGeometric):
                                        use_cuda=use_cuda)
         else:
             tps_grid_size = np.sqrt(s2_output_dim/2)
-            self.geoTnf = GeometricTnf(geometric_model='tps', 
-                                       tps_grid_size=tps_grid_size, 
+            self.geoTnf = GeometricTnf(geometric_model='tps',
+                                       tps_grid_size=tps_grid_size,
                                        use_cuda=use_cuda)
         
         self.FeatureRegression2 = FeatureRegression(output_dim=s2_output_dim,

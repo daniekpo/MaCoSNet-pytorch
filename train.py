@@ -7,7 +7,6 @@ from util.util import init_model, init_model_optim
 from util.util import init_train_data, init_eval_data
 from util.util import save_model
 
-from util.eval_util import compute_metric
 from util.torch_util import BatchTensorToVars
 from parser.parser import ArgumentParser
 
@@ -262,7 +261,8 @@ def main():
     # eval_stats = compute_metric(
     #     args.eval_metric, model, eval_data, eval_loader, batch_tnf, args
     # )
-    # # best_eval_pck = np.mean(eval_stats["aff_tps"][args.eval_metric][eval_idx])
+    # best_eval_pck = np.mean(
+    #     eval_stats["aff_tps"][args.eval_metric][eval_idx])
     # best_eval_pck = 0
 
     # best_epoch = 1
