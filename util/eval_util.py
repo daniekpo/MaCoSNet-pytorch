@@ -209,6 +209,7 @@ def pck_metric(
     # warp points with estimated transformations
     target_points_norm = PointsToUnitCoords(target_points, target_im_size)
 
+    # Apply the affine tps transformation
     warped_points_aff_tps_norm = pt.tpsPointTnf(
         theta_aff_tps, target_points_norm
     )
